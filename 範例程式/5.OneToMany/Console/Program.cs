@@ -24,7 +24,7 @@ namespace YC
             setDBFilePath();
             createRecord();
 
-
+            Console.WriteLine("建立Record完成");
             Console.ReadKey();
         }
 
@@ -46,11 +46,7 @@ namespace YC
         private static void createRecord()
         {
             Service.ImportService import = new Service.ImportService();
-            var records = import.FindRecordsFromJsonUrl();
-            Repository.RecordRepository db = new Repository.RecordRepository();
-
-            db.Create(records);
-
+            var records = import.CreateRecordsFromJson();
 
 
         }
